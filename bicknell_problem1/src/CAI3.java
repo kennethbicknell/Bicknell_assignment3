@@ -11,8 +11,6 @@ public class CAI3{
         in = new Scanner(System.in);
         
         
-        this.generateQuestion();
-
     }
 
     private int generateFactor(int range){
@@ -21,6 +19,7 @@ public class CAI3{
     
     public void quiz(){
         this.correct = 0;
+        this.generateQuestion();
 
         for(int i = 0; i < 10; i++){
            askQuestion();
@@ -122,7 +121,6 @@ public class CAI3{
         
         if (response.equalsIgnoreCase("y")){
             System.out.println();
-            generateQuestion();
             quiz();
         } else if(response.equalsIgnoreCase("n")){
             System.exit(0);
