@@ -4,8 +4,9 @@ import java.lang.Math;
 public class CAI5{ 
     private SecureRandom rand;
     private Scanner in;
-    private int num1, num2, answer, numCorrect;
-    private int range, type, tempType;
+    private double num1, num2, answer;
+    private int range, type, tempType, numCorrect;
+    final static double acceptable_error = .000001;
 
     public static void main(String[] args){
         CAI5 test = new CAI5();
@@ -41,23 +42,23 @@ public class CAI5{
     private void askQuestion(){
         switch(tempType){
             case 0:
-                System.out.printf("what is %d + %d? ", num1, num2);
+                System.out.printf("what is %.0f + %.0f? ", num1, num2);
                 break;
             case 1:
-                System.out.printf("what is %d * %d? ", num1, num2);
+                System.out.printf("what is %.0f * %.0f? ", num1, num2);
                 break;
             case 2:
-                System.out.printf("what is %d - %d? ", num1, num2);
+                System.out.printf("what is %.0f - %.0f? ", num1, num2);
                 break;
             case 3:
-                System.out.printf("what is %d / %d? ", num1, num2);
+                System.out.printf("what is %.0f / %.0f? ", num1, num2);
                 break;
             
         }
     }
 
     private void readResponse(){
-        int studentAnswer = in.nextInt();
+        double studentAnswer = in.nextDouble();
         if (isAnswerCorrect(studentAnswer)){
             displayCorrectResponse();
             this.numCorrect++;
@@ -68,8 +69,12 @@ public class CAI5{
         }
     }
 
-    private boolean isAnswerCorrect(int response){
-        return (response == this.answer);
+    private boolean isAnswerCorrect(Double response){
+        if(tempType == 3){
+            return (Math.abs(response - answer) < .1);
+        } else {
+            return (Math.abs(response - answer) < acceptable_error);
+        }
     }
 
     private void displayCorrectResponse(){
