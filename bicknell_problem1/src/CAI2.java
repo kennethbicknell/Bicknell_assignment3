@@ -1,11 +1,16 @@
 import java.security.SecureRandom;
 import java.util.Scanner;
 public class CAI2{ 
-    SecureRandom rand;
-    Scanner in;
-    int factor1, factor2, product;
-    final static int range = 10;
+    private SecureRandom rand;
+    private Scanner in;
+    private int factor1, factor2, product;
+    private final static int range = 10;
     
+    public static void main(String[] args){
+        CAI2 test = new CAI2();
+        test.quiz();
+    }
+
     public CAI2(){
         rand = new SecureRandom();
         in = new Scanner(System.in);

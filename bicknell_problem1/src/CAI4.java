@@ -2,10 +2,15 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 import java.lang.Math;
 public class CAI4{ 
-    SecureRandom rand;
-    Scanner in;
-    int factor1, factor2, product, correct;
-    int range;
+    private SecureRandom rand;
+    private Scanner in;
+    private int factor1, factor2, product, correct;
+    private int range;
+
+    public static void main(String[] args){
+        CAI4 test = new CAI4();
+        test.quiz();
+    }
     
     public CAI4(){
         rand = new SecureRandom();
