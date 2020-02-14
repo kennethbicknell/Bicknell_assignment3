@@ -24,14 +24,14 @@ public class CAI4{
     }
     
     public void quiz(){
-        setDifficulty();
+        readDifficulty();
         this.correct = 0;
-        this.generateQuestion();
+        this.generateQuestionArgument();
 
         for(int i = 0; i < 10; i++){
            askQuestion();
            readResponse();
-           generateQuestion();
+           generateQuestionArgument();
        }
 
        displayCompletionMessage();
@@ -92,7 +92,7 @@ public class CAI4{
         }
     }
 
-    private void generateQuestion(){
+    private void generateQuestionArgument(){
         this.factor1 = generateFactor();
         this.factor2 = generateFactor();
 
@@ -134,7 +134,7 @@ public class CAI4{
         }
     }
 
-    private void setDifficulty(){
+    private void readDifficulty(){
         System.out.print("Please enter a difficulty level from 1-4 ");
         int difficulty = in.nextInt();
         while (difficulty > 4 || difficulty < 1){
