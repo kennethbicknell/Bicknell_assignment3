@@ -23,6 +23,10 @@ public class CAI5{
     private int generateFactor(){
         return rand.nextInt(range);
     }
+
+    private int generateFactor(int range){
+        return rand.nextInt(range);
+    }
     
     public void quiz(){
         readDifficulty();
@@ -131,6 +135,7 @@ public class CAI5{
                 answer = num1 - num2;
                 break;
             case 3:
+                this.num2 = generateFactor(range - 1) + 1;
                 answer = num1 / num2;
                 break;
         }
