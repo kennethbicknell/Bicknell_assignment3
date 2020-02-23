@@ -21,6 +21,6 @@ public class SavingsAccount{
     }
 
     public void printBalance(){
-        System.out.printf("Account balance:\t%.2f\n", this.savingsBalance);
+        System.out.printf("%.2f\t\t", this.savingsBalance);
     }
 }

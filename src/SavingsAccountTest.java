@@ -4,30 +4,32 @@ public class SavingsAccountTest{
         SavingsAccount saver2 = new SavingsAccount(3000);
 
         SavingsAccount.modifyInterestRate(.04);
+        System.out.printf("Month\tSaver1\t\tSaver2\n");
 
         for( int i = 0; i < 12; i++){
             saver1.calculateMonthlyInterest();
+
             saver2.calculateMonthlyInterest();
+
+            printSavers(i + 1, saver1, saver2);
         }
 
-        System.out.println("saver1:");
-        saver1.printBalance();
-        
-        System.out.println("saver2:");
-        saver2.printBalance();
-
-        System.out.println();
         
         SavingsAccount.modifyInterestRate(.05);
 
         saver1.calculateMonthlyInterest();
         saver2.calculateMonthlyInterest();
-    
-        System.out.println("saver1:");
-        saver1.printBalance();
-        
-        System.out.println("saver2:");
-        saver2.printBalance();
 
+        printSavers(13, saver1, saver2);
+    
+
+
+    }
+
+    private static void printSavers(int month, SavingsAccount saver, SavingsAccount saver2){
+        System.out.print(month+"\t");
+        saver.printBalance();
+        saver2.printBalance();
+        System.out.println();
     }
 }
