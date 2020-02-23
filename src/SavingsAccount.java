@@ -20,4 +20,8 @@ public class SavingsAccount{
     private void deposit(double amount){
         this.savingsBalance += amount;
     }
+
+    public void printBalance(){
+        System.out.printf("Account balance:\t%.2f\n", this.savingsBalance);
+    }
 }
