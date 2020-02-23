@@ -2,13 +2,12 @@ public class SavingsAccount{
     private static double annualInterestRate;
     private double savingsBalance;
 
-    public SavingsAccount(double interestRate, double initialDeposit){
+    public SavingsAccount( double initialDeposit){
         this.savingsBalance = 0;
-        modifyInterestRate(interestRate);
         deposit(initialDeposit);
     }
 
-    public void modifyInterestRate(double rate){
+    public static void modifyInterestRate(double rate){
         annualInterestRate = rate;
     }
 
